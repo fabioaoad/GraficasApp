@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ChartDataSets, ChartOptions, ChartType} from "chart.js";
 import {Label} from "ng2-charts";
 
@@ -9,6 +9,10 @@ import {Label} from "ng2-charts";
   ]
 })
 export class BarrasComponent implements OnInit {
+
+
+
+
 
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -25,7 +29,9 @@ export class BarrasComponent implements OnInit {
     { data: [8, 65, 32, 59, 11, 66, 100], label: 'Series C', backgroundColor: '#DDFA87', hoverBackgroundColor: 'red' },
   ];
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
