@@ -34,16 +34,27 @@ export class DonaHttpComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.graficaService.getUsuariosRedesSociales()
-      .subscribe( data => {
-        console.log(data);
-        const labels = Object.keys( data );
-        const values = Object.values( data );
-        //console.log(labels);
-        //console.log(values);
-        this.doughnutChartLabels = labels;
-        this.doughnutChartData.push( values );
-      });
+    // this.graficaService.getUsuariosRedesSociales()
+    //   .subscribe( data => {
+    //     console.log(data);
+    //     const labels = Object.keys( data );
+    //     const values = Object.values( data );
+    //     //console.log(labels);
+    //     //console.log(values);
+    //     this.doughnutChartLabels = labels;
+    //     this.doughnutChartData.push( values );
+    //   });
+
+
+
+
+    // OTRA FORMA
+    this.graficaService.getUsuariosRedesSocialesDonaData()
+      .subscribe( ({ labels, values }) => {
+       this.doughnutChartLabels = labels;
+       this.doughnutChartData.push(values);
+
+      })
   }
 
 }
