@@ -1,29 +1,32 @@
-<h1>Redes sociales más usadas</h1>
+<h1 class="animate__animated animate__pulse">Redes sociales más usadas</h1>
 <hr>
 
-<div  *ngIf="doughnutChartData.length === 0; else divGrafica"
-      class="alert alert-info">
-  Cargando Data...
-</div>
 
-<div class="row">
-  <div class="col">
+  <div  *ngIf="doughnutChartData.length === 0; else divGrafica"
+        class="alert alert-info animate__animated animate__flip">
+    Cargando Data...
+  </div>
+
+  <div class="row">
+    <div class="col">
 
 
-    <ng-template #divGrafica>
-      <div style="display: block">
-        <canvas baseChart
-                [data]="doughnutChartData"
-                [labels]="doughnutChartLabels"
-                [chartType]="doughnutChartType"
-                [colors]="colors">
-        </canvas>
-      </div>
-      <span class="float-end text-primary">
+      <ng-template #divGrafica>
+        <div style="display: block" class="animate__animated animate__jello">
+          <canvas baseChart
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"
+                  [colors]="colors">
+          </canvas>
+        </div>
+        <span class="float-end text-primary">
         Información en billones de usuarios
       </span>
-    </ng-template>
+      </ng-template>
 
 
+    </div>
   </div>
-</div>
+
+
